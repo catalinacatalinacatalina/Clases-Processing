@@ -1,3 +1,4 @@
+``` Processing
 # Parte superior
 fill(self.c1, self.c2, self.c3)
 beginShape()
@@ -18,3 +19,4 @@ vertex(self.x + self.w/2, self.y + self.h2*i)
 vertex(self.x + self.w/2, self.y + self.h2*i - self.h2)
 vertex(self.x, self.y + self.h2*i)
 endShape()
+´´´
