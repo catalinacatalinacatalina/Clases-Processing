@@ -17,7 +17,7 @@ class Celda:
         rect(self.j*self.tamano, self.i*self.tamano, self.tamano, self.tamano)
         
     def actualizar(self, grid, filas, columnas):
-        vecinas_vivas = self.contar_vecinas(grid, filas, columnas) # devolverá cuantas casillas vecinas estan vivas
+        vecinas_vivas = self.contar_vecinas(grid, filas, columnas) # devolvera cuantas casillas vecinas estan vivas
         
         if self.viva and (vecinas_vivas == 2 or vecinas_vivas==3):
             self.prox_estado = True
@@ -35,5 +35,33 @@ class Celda:
         # superior izq
         if self.i >0 and self.j >0 and grid[self.i-1][self.j-1].viva:
             vivas+=1
+        
+        # Vecina superior
+        if self.i-1>=0 and grid[self.i-1][self.j].viva:
+            vivas+=1
+
+        # Vecina superior derecha
+        if self.i>0 and self.j<columnas-1 and grid[self.i-1][self.j+1].viva:
+            vivas+=1
+            
+        # Vecina izquierda
+        if self.j > 0 and grid[self.i][self.j-1].viva:
+            vivas += 1
+        
+        # Vecina derecha
+        if self.j < columnas-1 and grid[self.i][self.j+1].viva:
+            vivas += 1
+        
+        # Vecina inferior izquierda
+        if self.i < filas-1 and self.j > 0 and grid[self.i+1][self.j-1].viva:
+            vivas += 1
+        
+        # Vecina inferior
+        if self.i < filas-1 and grid[self.i+1][self.j].viva:
+            vivas += 1
+        
+        # Vecina inferior derecha
+        if self.i < filas-1 and self.j < columnas-1 and grid[self.i+1][self.j+1].viva:
+            vivas += 1
         
         return vivas

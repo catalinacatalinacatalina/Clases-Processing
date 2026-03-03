@@ -26,3 +26,7 @@ def draw():
         for j in range (COLUMNAS):
             grid[i][j].actualizar(grid, FILAS, COLUMNAS)
     
+        #actualizo
+    for i in range (FILAS):
+        for j in range (COLUMNAS):
+            grid[i][j].aplicar_actualizacion()
