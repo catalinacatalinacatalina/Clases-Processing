@@ -26,7 +26,15 @@ def draw():
         for j in range (COLUMNAS):
             grid[i][j].actualizar(grid, FILAS, COLUMNAS)
     
-        #actualizo
+    #actualizo
     for i in range (FILAS):
         for j in range (COLUMNAS):
             grid[i][j].aplicar_actualizacion()
+            
+
+def mouseMoved():
+    i = mouseY // TAM
+    j = mouseX // TAM
+    
+    if i>=0 and i< FILAS and j>=0 and j< COLUMNAS:
+        grid[i][j].toggle()

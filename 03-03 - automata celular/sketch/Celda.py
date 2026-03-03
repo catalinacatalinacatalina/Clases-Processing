@@ -65,3 +65,6 @@ class Celda:
             vivas += 1
         
         return vivas
+    
+    def toggle(self):
+        self.viva = not self.viva
