@@ -1,3 +1,4 @@
+import Config
 class Casilla:
     def __init__(self, x, y, solucion):
         self.x = x
@@ -6,8 +7,8 @@ class Casilla:
         self.estado = 0 # 0 = vacio, 1 = encendido, 2 = apagado
 
     def dibujar(self):
-        px = OFFSET_X + self.x * CELL_SIZE
-        py = OFFSET_Y + self.y * CELL_SIZE
+        px = Config.OFFSET_X + self.x * Config.CELL_SIZE
+        py = Config.OFFSET_Y + self.y * Config.CELL_SIZE
         stroke(0)
         strokeWeight(1)
         # opcion 1 --> blanca
@@ -20,4 +21,4 @@ class Casilla:
         else:
             fill(120)
 
-        square(px, py, CELL_SIZE)
+        square(px, py, Config.CELL_SIZE)
