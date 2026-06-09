@@ -5,7 +5,7 @@ class Player:
         self.x = x
         self.y = y
         self.r = 20
-        self.speed = 4
+        self.speed = 90
 
     def move(self):
         mx = mouseX - self.x
@@ -17,8 +17,7 @@ class Player:
             vx = mx/d
             vy = my/d
             # cuanto mas grande -> mas lento
-            vel = self.speed * (30 / self.r)
-            
+            vel = self.speed / self.r
             self.x += vx * vel
             self.y += vy * vel
         
